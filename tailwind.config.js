@@ -13,6 +13,10 @@ export default {
           light: '#f3e5f5',
         }
       },
+      fontFamily: {
+        bebas: ['Bebas Neue', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+      },
     },
   },
   plugins: [],

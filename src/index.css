@@ -8,13 +8,47 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Optional: Smooth scrolling */
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Optional: Better font rendering */
+/* Better font rendering */
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* In your global styles.css or a dedicated stylesheet */
+
+.scroll-indicator {
+  position: fixed;
+  bottom: 20px; /* Adjust distance from bottom */
+  right: 20px; /* Adjust distance from right */
+  width: 4px;
+  height: 40px; /* Adjust height */
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity */
+  border-radius: 2px;
+  animation: scrollIndicator 2s infinite alternate;
+}
+
+@keyframes scrollIndicator {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.pulse {
+  animation: pulse 1.5s infinite;
 }

@@ -1,7 +1,8 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { FaRobot, FaUsers, FaLightbulb } from 'react-icons/fa';
 
-const About = () => {
+const About = React.forwardRef((props, ref) => {
   const highlights = [
     {
       icon: <FaRobot className="w-8 h-8 text-primary" />,
@@ -21,7 +22,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" ref={ref} className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -82,6 +83,6 @@ const About = () => {
       </div>
     </section>
   );
-};
+});
 
 export default About;

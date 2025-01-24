@@ -1,11 +1,22 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import BackgroundParticles from './BackgroundParticles';
 import FloatingIcons from './FloatingIcons';
 
-const Hero = () => {
+const Hero = React.forwardRef(({ aboutRef }, ref) => {
+  const handleLearnMoreClick = () => {
+    if (aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: 'smooth' }); // Scroll to About section
+    }
+  };
+
   return (
-    <div id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
+    <div 
+      id="home" 
+      ref={ref}
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary to-primary-dark overflow-hidden"
+    >
       {/* Three.js Canvas Background */}
       <div className="absolute inset-0">
         <Canvas camera={{ position: [0, 0, 5] }}>
@@ -27,8 +38,8 @@ const Hero = () => {
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-display tracking-tight">
             Career Adviser ChatBot
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 font-body">
-            Your personalized career guidance assistant for South African students, Grades 10-12.
+          <p className="text-xl md:text-2xl text-white/90 mb-8 font-poppins">
+            Your personalized career guidance assistant for South African students.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.button
@@ -39,19 +50,20 @@ const Hero = () => {
             >
               Start Chatting Now
             </motion.button>
-            {/*
+          
             <motion.button
+              onClick={handleLearnMoreClick}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-full font-semibold text-lg font-body"
             >
               Learn More
-            </motion.button>*/}
+            </motion.button>
           </div>
         </motion.div>
       </div>
     </div>
   );
-};
+});
 
 export default Hero;
