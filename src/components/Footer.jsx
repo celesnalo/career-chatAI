@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
           */}
           <div className="mt-8 text-gray-400 text-sm">
-            © 2024 Career Adviser ChatBot. All rights reserved.
+            © {new Date().getFullYear()} Career Adviser ChatBot. All rights reserved.
           </div>
         </div>
       </div>
