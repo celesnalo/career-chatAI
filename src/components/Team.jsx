@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaGlobe } from 'react-icons/fa';
 import snalo from '../assets/mthobisi.jfif';
 import thabo from '../assets/thabo.jpg';
-import cebo from '../assets/cebo.jpeg';
+import cebo from '../assets/cebo.png';
 const Team = () => {
   const team = [
     {
