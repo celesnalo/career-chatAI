@@ -6,7 +6,7 @@ import cebo from '../assets/cebo.png';
 const Team = () => {
   const team = [
     {
-      name: "Cebolenkosi",
+      name: "Cebolenkosi Msweli",
       role: "Software Developer",
       image: cebo,
       social: {
